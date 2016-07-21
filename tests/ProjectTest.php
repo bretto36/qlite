@@ -62,7 +62,7 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
     {
         return;
 
-        // Added this later
+        // Add this later
         $mock = new MockHandler([
             new Response(200, [], file_get_contents('tests/json/project_success.json')),
         ]);
