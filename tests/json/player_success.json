@@ -1,0 +1,141 @@
+{
+  "format": 0,
+  "player": {
+    "id": "123",
+    "active": true,
+    "projectid": "10",
+    "qliteserial": "Q131TV7.5",
+    "name": "Test-Display",
+    "description": "",
+    "width": 384,
+    "height": 216,
+    "playertypeid": "2",
+    "_playertypename": "QlDvi v2.6",
+    "playlistid": "99",
+    "operatingon": "00:00:00",
+    "operatingoff": "23:59:00",
+    "gpsavailable": false,
+    "_location": null,
+    "_temperature": null,
+    "_firstplaylistitem": {
+      "id": true,
+      "posid": false,
+      "visible": true,
+      "duration": "50",
+      "type": "simpleimage",
+      "simpleimage": {
+        "libraryid": "62",
+        "libraryitemid": "346",
+        "_filepath": "libraryitems/prj10/lib62/l5116c39fa2c8db6f994ba841f735039.jpg",
+        "_previewfilepath": "libraryitems/prj10/lib62/l5116c39fa2c8db6f994ba841f735039.png"
+      }
+    },
+    "_pings": null,
+    "_transports": [
+      {
+        "datetime": "2016-07-21T00:13:12Z",
+        "progresstype": "info",
+        "progressmessage": "NovaTP: Data has changed",
+        "progresscode": 1001,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-07-21T00:12:57Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-07-21T00:12:33Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-07-21T00:12:08Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-07-21T00:11:44Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-07-21T00:11:20Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-07-21T00:10:56Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-07-21T00:10:32Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-07-21T00:10:07Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-07-21T00:09:44Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      }
+    ],
+    "_status": {
+      "iscontentinvalidated": true,
+      "istransportpending": true,
+      "istransporting": true,
+      "_lasttransport": {
+        "datetime": "2016-07-21T00:13:12Z",
+        "progresstype": "info",
+        "progressmessage": "NovaTP: Data has changed",
+        "progresscode": 1001,
+        "progresspermille": 0
+      }
+    },
+    "_scenarios": null,
+    "_warnings": [
+      {
+        "type": "transport",
+        "datetime": "2016-07-19T10:57:31Z",
+        "warning_status": true,
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201
+      }
+    ],
+    "_warnings_actual": [
+      {
+        "type": "transport",
+        "datetime": "2016-07-19T10:57:31Z",
+        "warning_status": true,
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201
+      }
+    ],
+    "_traffic": null
+  }
+}

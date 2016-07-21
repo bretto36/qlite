@@ -1,0 +1,92 @@
+{
+  "format": 0,
+  "project": {
+    "id": "9",
+    "name": "Project Name",
+    "scopes": {
+      "projects": {
+        "read": true,
+        "edit": true,
+        "manage": true,
+        "sysops": false,
+        "apply2child": true,
+        "_inherited": "9",
+        "_defined": true
+      },
+      "users": {
+        "read": true,
+        "edit": true,
+        "manage": true,
+        "sysops": false,
+        "apply2child": true,
+        "_inherited": "9",
+        "_defined": true
+      },
+      "players": {
+        "read": true,
+        "edit": true,
+        "manage": false,
+        "sysops": false,
+        "apply2child": true,
+        "_inherited": "9",
+        "_defined": true
+      },
+      "playlists": {
+        "read": true,
+        "edit": true,
+        "manage": true,
+        "sysops": false,
+        "apply2child": true,
+        "_inherited": "9",
+        "_defined": true
+      },
+      "libraries": {
+        "read": true,
+        "edit": true,
+        "manage": true,
+        "sysops": false,
+        "apply2child": true,
+        "_inherited": "9",
+        "_defined": true
+      },
+      "scenarios": {
+        "read": false,
+        "edit": false,
+        "manage": false,
+        "sysops": false,
+        "apply2child": true,
+        "_inherited": "9",
+        "_defined": true
+      },
+      "schedules": {
+        "read": false,
+        "edit": false,
+        "manage": false,
+        "sysops": false,
+        "apply2child": true,
+        "_inherited": "9",
+        "_defined": true
+      }
+    },
+    "notification_addresses": "",
+    "player_restriction": {
+      "width": null,
+      "height": null,
+      "playertypeid": null
+    },
+    "_created": "2016-07-19T08:42:30Z",
+    "_projectids": [
+      "10"
+    ],
+    "_userids": [
+      "964"
+    ],
+    "_playerids": [],
+    "_playlistids": [
+      "98"
+    ],
+    "_libraryids": [],
+    "_scenarioids": [],
+    "_scheduleids": []
+  }
+}

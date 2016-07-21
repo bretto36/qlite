@@ -1,0 +1,187 @@
+{
+  "format": 0,
+  "projects": [
+    {
+      "id": "9",
+      "name": "Project Name",
+      "scopes": {
+        "projects": {
+          "read": true,
+          "edit": true,
+          "manage": true,
+          "sysops": false,
+          "apply2child": true,
+          "_inherited": "9",
+          "_defined": true
+        },
+        "users": {
+          "read": true,
+          "edit": true,
+          "manage": true,
+          "sysops": false,
+          "apply2child": true,
+          "_inherited": "9",
+          "_defined": true
+        },
+        "players": {
+          "read": true,
+          "edit": true,
+          "manage": false,
+          "sysops": false,
+          "apply2child": true,
+          "_inherited": "9",
+          "_defined": true
+        },
+        "playlists": {
+          "read": true,
+          "edit": true,
+          "manage": true,
+          "sysops": false,
+          "apply2child": true,
+          "_inherited": "9",
+          "_defined": true
+        },
+        "libraries": {
+          "read": true,
+          "edit": true,
+          "manage": true,
+          "sysops": false,
+          "apply2child": true,
+          "_inherited": "9",
+          "_defined": true
+        },
+        "scenarios": {
+          "read": false,
+          "edit": false,
+          "manage": false,
+          "sysops": false,
+          "apply2child": true,
+          "_inherited": "9",
+          "_defined": true
+        },
+        "schedules": {
+          "read": false,
+          "edit": false,
+          "manage": false,
+          "sysops": false,
+          "apply2child": true,
+          "_inherited": "9",
+          "_defined": true
+        }
+      },
+      "notification_addresses": "",
+      "player_restriction": {
+        "width": null,
+        "height": null,
+        "playertypeid": null
+      },
+      "_created": "2016-07-19T08:42:30Z",
+      "projects": [
+        {
+          "id": "10",
+          "name": "Displays 216x384",
+          "scopes": {
+            "projects": {
+              "read": true,
+              "edit": true,
+              "manage": true,
+              "sysops": false,
+              "apply2child": true,
+              "_inherited": "9",
+              "_defined": false
+            },
+            "users": {
+              "read": true,
+              "edit": true,
+              "manage": true,
+              "sysops": false,
+              "apply2child": true,
+              "_inherited": "9",
+              "_defined": false
+            },
+            "players": {
+              "read": true,
+              "edit": true,
+              "manage": false,
+              "sysops": false,
+              "apply2child": true,
+              "_inherited": "9",
+              "_defined": false
+            },
+            "playlists": {
+              "read": true,
+              "edit": true,
+              "manage": true,
+              "sysops": false,
+              "apply2child": true,
+              "_inherited": "9",
+              "_defined": false
+            },
+            "libraries": {
+              "read": true,
+              "edit": true,
+              "manage": true,
+              "sysops": false,
+              "apply2child": true,
+              "_inherited": "9",
+              "_defined": false
+            },
+            "scenarios": {
+              "read": false,
+              "edit": false,
+              "manage": false,
+              "sysops": false,
+              "apply2child": true,
+              "_inherited": "9",
+              "_defined": false
+            },
+            "schedules": {
+              "read": false,
+              "edit": false,
+              "manage": false,
+              "sysops": false,
+              "apply2child": true,
+              "_inherited": "9",
+              "_defined": false
+            }
+          },
+          "notification_addresses": "",
+          "player_restriction": {
+            "width": 384,
+            "height": 216,
+            "playertypeid": "2"
+          },
+          "_created": "2016-07-19T09:03:41Z",
+          "_projectids": [],
+          "_userdis": [
+            "965"
+          ],
+          "_playerids": [
+            "123"
+          ],
+          "_playlistids": [
+            "99"
+          ],
+          "_libraryids": [
+            "62"
+          ],
+          "_scenarioids": [],
+          "_scheduleids": []
+        }
+      ],
+      "_projectids": [
+        "10"
+      ],
+      "_userdis": [
+        "964"
+      ],
+      "_playerids": [],
+      "_playlistids": [
+        "98"
+      ],
+      "_libraryids": [],
+      "_scenarioids": [],
+      "_scheduleids": []
+    }
+  ]
+}
