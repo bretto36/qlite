@@ -3,13 +3,11 @@
 	"description" : "QLite Api Wrapper",
 	"type" : "library",
 	"license" : "MIT",
-	"require-dev" : {
-		"phpunit/phpunit" : "~4.2"
-	},
 	"require" : {
 		"guzzlehttp/guzzle" : "6.2.0",
-		"phpunit/phpunit" : "4.8.26",
-		"illuminate/http" : "^5.2"
+		"phpunit/phpunit" : "4.8.*",
+		"illuminate/http" : "^5.2",
+		"bretto36/qlite" : "1.*"
 	},
 	"autoload" : {
 		"psr-4" : {
