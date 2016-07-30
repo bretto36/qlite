@@ -28,12 +28,12 @@ class PostRequest extends AbstractPostRequest
 
     public function getBody()
     {
-        return json_encode([
+        return [
             'format' => 0,
             'login' => [
                 'username' => $this->username,
                 'password' => $this->password,
             ],
-        ]);
+        ];
     }
 }

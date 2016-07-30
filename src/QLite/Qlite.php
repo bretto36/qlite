@@ -212,9 +212,15 @@ class Qlite
     {
         $client = $this->getClient();
 
-        $response = $client->request($requestObject->getMethod(), $requestObject->getUrl(), [
-            'form_params' => $requestObject->getParameters(),
-        ]);
+        if ($requestObject->getMethod() == 'POST') {
+            $response = $client->request($requestObject->getMethod(), $requestObject->getUrl(), [
+                'json' => $requestObject->getBody(),
+            ]);
+        } else {
+            $response = $client->request($requestObject->getMethod(), $requestObject->getUrl(), [
+                'form_params' => $requestObject->getParameters(),
+            ]);
+        }
 
         return $response;
     }

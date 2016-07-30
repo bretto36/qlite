@@ -21,7 +21,7 @@ class GetRequest extends AbstractRequest
 
     public function getUrl()
     {
-        return $this->getBaseUrl() . 'v0/projects/' . $this->projectId . '/players/' . $this->playerId . '/';
+        return $this->getBaseUrl() . 'v0/projects/' . $this->projectId . '/players/' . $this->playerId . '/?' . http_build_query($this->getParameters());
     }
 
     public function getParameters()

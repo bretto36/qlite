@@ -18,7 +18,7 @@ class ListRequest extends AbstractRequest
 
     public function getUrl()
     {
-        return $this->getBaseUrl() . 'v0/projects/' . $this->projectId . '/playlists/';
+        return $this->getBaseUrl() . 'v0/projects/' . $this->projectId . '/playlists/?' . http_build_query($this->getParameters());
     }
 
     public function getParameters()

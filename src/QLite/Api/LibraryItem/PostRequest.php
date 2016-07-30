@@ -30,7 +30,7 @@ class PostRequest extends AbstractPostRequest
 
     public function getUrl()
     {
-        return $this->getBaseUrl() . 'v0/projects/' . $this->projectId . '/libraries/' . $this->libraryId . '/items/';
+        return $this->getBaseUrl() . 'v0/projects/' . $this->projectId . '/libraries/' . $this->libraryId . '/items/?' . http_build_query($this->getParameters());
     }
 
     public function getParameters()
@@ -42,13 +42,13 @@ class PostRequest extends AbstractPostRequest
 
     public function getBody()
     {
-        return json_encode([
+        return [
             'format' => 0,
             'libraryitem' => [
                 'name' => $this->name,
                 'file' => $this->file,
                 'tags' => $this->tags,
             ],
-        ]);
+        ];
     }
 }
