@@ -1,0 +1,54 @@
+{
+  "format": 0,
+  "projectid": "10",
+  "libraryid": "62",
+  "libraryitems": [
+    {
+      "id": "351",
+      "type": "bitmap",
+      "name": "Image 1",
+      "filepath": "libraryitems/prj10/lib62/efda413b0e925d77513397a572989c8d.png",
+      "filemd5": "6777e7942e70f0f1ca02fe0bbe0c270c",
+      "tags": [],
+      "width": 640,
+      "height": 480,
+      "filesize": 51813,
+      "duration": 0,
+      "_usedin": []
+    },
+    {
+      "id": "352",
+      "type": "bitmap",
+      "name": "Image 2",
+      "filepath": "libraryitems/prj10/lib62/v8da3fafb78d9e62e43490fbee7596b2.png",
+      "filemd5": "dfed8789e7d694df5fe7c569c161e90a",
+      "tags": [],
+      "width": 640,
+      "height": 480,
+      "filesize": 47981,
+      "duration": 0,
+      "_usedin": []
+    },
+    {
+      "id": "346",
+      "type": "bitmap",
+      "name": "Image 3",
+      "filepath": "libraryitems/prj10/lib62/l5116c39fa2c8db6f994ba841f735039.png",
+      "filemd5": "fafa5efeaf3cbe3b23b2748d13e629a1",
+      "tags": [],
+      "width": 1024,
+      "height": 768,
+      "filesize": 620888,
+      "duration": 0,
+      "_usedin": [
+        {
+          "projectid": "10",
+          "playlistid": "99",
+          "playlistitemid": "682",
+          "projectname": "Suurland Q131TV7.5",
+          "playlistname": "Test_Playlist"
+        }
+      ]
+    }
+  ]
+}

@@ -13,7 +13,7 @@ class LibraryItems
         $this->json = $jsonObject;
     }
 
-    public function getLibraries()
+    public function getLibraryItems()
     {
         // Create an array of project objects
         if (null === $this->libraryItems) {

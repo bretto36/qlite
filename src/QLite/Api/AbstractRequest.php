@@ -13,6 +13,16 @@ abstract class AbstractRequest
         return 'GET';
     }
 
+    public function getHeaders()
+    {
+        return [];
+    }
+
+    public function isMultipart()
+    {
+        return false;
+    }
+
     public function getBaseUrl()
     {
         return 'https://dev2-cloud.q-lite.com/api/';

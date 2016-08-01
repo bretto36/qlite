@@ -1,0 +1,18 @@
+{
+  "format": 0,
+  "projectid": "10",
+  "libraryid": "62",
+  "libraryitem": {
+    "id": "352",
+    "type": "bitmap",
+    "name": "Test Item Name",
+    "filepath": "bitmap-icon.png",
+    "filemd5": "dfed8789e7d694df5fe7c569c161e90a",
+    "tags": [],
+    "width": 0,
+    "height": 0,
+    "filesize": 47981,
+    "duration": 0,
+    "_usedin": []
+  }
+}

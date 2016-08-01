@@ -9,5 +9,10 @@ abstract class AbstractPostRequest extends AbstractRequest
         return 'POST';
     }
 
+    public function getHeaders()
+    {
+        return [];
+    }
+
     abstract public function getBody();
 }

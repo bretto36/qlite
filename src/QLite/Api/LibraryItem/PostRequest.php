@@ -2,9 +2,9 @@
 
 namespace Qlite\Api\LibraryItem;
 
-use Qlite\Api\AbstractPostRequest;
+use Qlite\Api\AbstractMultipartRequest;
 
-class PostRequest extends AbstractPostRequest
+class PostRequest extends AbstractMultipartRequest
 {
     protected $apiKey;
 
@@ -33,6 +33,11 @@ class PostRequest extends AbstractPostRequest
         return $this->getBaseUrl() . 'v0/projects/' . $this->projectId . '/libraries/' . $this->libraryId . '/items/?' . http_build_query($this->getParameters());
     }
 
+    public function getHeaders()
+    {
+        return [];
+    }
+
     public function getParameters()
     {
         return [
@@ -40,14 +45,20 @@ class PostRequest extends AbstractPostRequest
         ];
     }
 
-    public function getBody()
+    public function getMultipart()
     {
         return [
-            'format' => 0,
-            'libraryitem' => [
-                'name' => $this->name,
-                'file' => $this->file,
-                'tags' => $this->tags,
+            [
+                'name' => 'name',
+                'contents' => $this->name,
+            ],
+            [
+                'name' => 'file',
+                'contents' => fopen($this->file, 'r'),
+            ],
+            [
+                'name' => 'tags',
+                'contents' => $this->tags,
             ],
         ];
     }

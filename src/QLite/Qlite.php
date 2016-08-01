@@ -202,6 +202,51 @@ class Qlite
         return false;
     }
 
+    public function getLibraryItems($apiKey, $projectId, $libraryId)
+    {
+        $requestObject = new \Qlite\Api\LibraryItem\ListRequest($apiKey, $projectId, $libraryId);
+
+        $response = $this->call($requestObject);
+
+        $responseObject = new \Qlite\Api\LibraryItem\ListResponse($response);
+
+        if ($responseObject->getStatusCode() == \Illuminate\Http\Response::HTTP_OK) {
+            return $responseObject->getObject();
+        }
+
+        return false;
+    }
+
+    public function getLibraryItem($apiKey, $projectId, $libraryId, $libraryItemId)
+    {
+        $requestObject = new \Qlite\Api\LibraryItem\GetRequest($apiKey, $projectId, $libraryId, $libraryItemId);
+
+        $response = $this->call($requestObject);
+
+        $responseObject = new \Qlite\Api\LibraryItem\GetResponse($response);
+
+        if ($responseObject->getStatusCode() == \Illuminate\Http\Response::HTTP_OK) {
+            return $responseObject->getObject();
+        }
+
+        return false;
+    }
+
+    public function createLibraryItem($apiKey, $projectId, $libraryId, $name, $file, $tags = '')
+    {
+        $requestObject = new \Qlite\Api\LibraryItem\PostRequest($apiKey, $projectId, $libraryId, $name, $file, $tags);
+
+        $response = $this->call($requestObject);
+
+        $responseObject = new \Qlite\Api\LibraryItem\PostResponse($response);
+
+        if ($responseObject->getStatusCode() == \Illuminate\Http\Response::HTTP_OK) {
+            return $responseObject->getObject();
+        }
+
+        return false;
+    }
+
     /**
      * Executes the request
      *
@@ -212,14 +257,22 @@ class Qlite
     {
         $client = $this->getClient();
 
-        if ($requestObject->getMethod() == 'POST') {
-            $response = $client->request($requestObject->getMethod(), $requestObject->getUrl(), [
-                'json' => $requestObject->getBody(),
-            ]);
+        if ($requestObject->isMultipart()) {
+            if ($requestObject->getMethod() == 'POST') {
+                $response = $client->request($requestObject->getMethod(), $requestObject->getUrl(), [
+                    'multipart' => $requestObject->getMultipart(),
+                ]);
+            }
         } else {
-            $response = $client->request($requestObject->getMethod(), $requestObject->getUrl(), [
-                'form_params' => $requestObject->getParameters(),
-            ]);
+            if ($requestObject->getMethod() == 'POST') {
+                $response = $client->request($requestObject->getMethod(), $requestObject->getUrl(), [
+                    'json' => $requestObject->getBody(),
+                ]);
+            } else {
+                $response = $client->request($requestObject->getMethod(), $requestObject->getUrl(), [
+                    'form_params' => $requestObject->getParameters(),
+                ]);
+            }
         }
 
         return $response;
