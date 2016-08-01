@@ -4,7 +4,7 @@ namespace Qlite\Api\PlaylistItem;
 
 use Qlite\Api\AbstractRequest;
 
-class GetRequest extends AbstractRequest
+class DeleteRequest extends AbstractRequest
 {
     protected $apiKey;
 
@@ -14,15 +14,12 @@ class GetRequest extends AbstractRequest
 
     protected $playlistItemId;
 
-    protected $includeSubProjects;
-
-    public function __construct($apiKey, $projectId, $playlistId, $playlistItemId, $includeSubProjects = false)
+    public function __construct($apiKey, $projectId, $playlistId, $playlistItemId)
     {
         $this->apiKey             = $apiKey;
         $this->projectId          = $projectId;
         $this->playlistId         = $playlistId;
         $this->playlistItemId     = $playlistItemId;
-        $this->includeSubProjects = $includeSubProjects;
     }
 
     public function getUrl()
@@ -32,14 +29,8 @@ class GetRequest extends AbstractRequest
 
     public function getParameters()
     {
-        $parameters = array(
+        return array(
             'api_key' => $this->apiKey,
         );
-
-        if ($this->includeSubProjects) {
-            $parameters['include'] = 'all';
-        }
-
-        return $parameters;
     }
 }

@@ -172,6 +172,21 @@ class Qlite
         return false;
     }
 
+    public function deletePlaylistItem($apiKey, $projectId, $playlistId, $playlistItemId)
+    {
+        $requestObject = new \Qlite\Api\PlaylistItem\DeleteRequest($apiKey, $projectId, $playlistId, $playlistItemId);
+
+        $response = $this->call($requestObject);
+
+        $responseObject = new \Qlite\Api\PlaylistItem\DeleteResponse($response);
+
+        if ($responseObject->getStatusCode() == \Illuminate\Http\Response::HTTP_OK) {
+            return $responseObject->getObject();
+        }
+
+        return false;
+    }
+
     public function getPlayers($apiKey, $projectId)
     {
         $requestObject = new \Qlite\Api\Player\ListRequest($apiKey, $projectId);

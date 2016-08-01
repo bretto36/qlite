@@ -9,11 +9,6 @@ abstract class AbstractMultipartRequest extends AbstractRequest
         return 'POST';
     }
 
-    public function getHeaders()
-    {
-        return [];
-    }
-
     public function isMultipart()
     {
         return true;

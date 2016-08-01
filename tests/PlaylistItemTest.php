@@ -71,4 +71,20 @@ class PlaylistItemTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('simpleimage', $response->getType());
         $this->assertTrue($response->isVisible());
     }
+
+    public function test_delete_playlist_item_returns_results()
+    {
+        $mock = new MockHandler([
+            new Response(200, [], file_get_contents('tests/json/playlist_item_delete_success.json')),
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $api = new Qlite(['client' => $client]);
+
+        $response = $api->deletePlaylistItem('apikey', 16, 103, 705);
+
+        $this->assertEquals(705, $response->getId());
+    }
 }
