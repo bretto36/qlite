@@ -1,0 +1,18 @@
+{
+  "format": 0,
+  "projectid": "16",
+  "playlistid": "103",
+  "playlistitem": {
+    "id": "704",
+    "posid": 0,
+    "visible": true,
+    "duration": 30,
+    "type": "simpleimage",
+    "simpleimage": {
+      "libraryid": "65",
+      "libraryitemid": "354",
+      "_filepath": "libraryitems/prj16/lib65/r83dde99f81b061e2307bb3db3c719f4.jpg",
+      "_previewfilepath": "libraryitems/prj16/lib65/r83dde99f81b061e2307bb3db3c719f4.png"
+    }
+  }
+}

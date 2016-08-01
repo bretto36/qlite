@@ -127,6 +127,51 @@ class Qlite
         return false;
     }
 
+    public function getPlaylistItems($apiKey, $projectId, $playlistId)
+    {
+        $requestObject = new \Qlite\Api\PlaylistItem\ListRequest($apiKey, $projectId, $playlistId);
+
+        $response = $this->call($requestObject);
+
+        $responseObject = new \Qlite\Api\PlaylistItem\ListResponse($response);
+
+        if ($responseObject->getStatusCode() == \Illuminate\Http\Response::HTTP_OK) {
+            return $responseObject->getObject();
+        }
+
+        return false;
+    }
+
+    public function getPlaylistItem($apiKey, $projectId, $playlistId, $playlistItemId)
+    {
+        $requestObject = new \Qlite\Api\PlaylistItem\GetRequest($apiKey, $projectId, $playlistId, $playlistItemId);
+
+        $response = $this->call($requestObject);
+
+        $responseObject = new \Qlite\Api\PlaylistItem\GetResponse($response);
+
+        if ($responseObject->getStatusCode() == \Illuminate\Http\Response::HTTP_OK) {
+            return $responseObject->getObject();
+        }
+
+        return false;
+    }
+
+    public function addLibraryItemToPlaylist($apiKey, $projectId, $playlistId, $libraryId, $libraryItemId, $duration)
+    {
+        $requestObject = new \Qlite\Api\PlaylistItem\LibraryItemPostRequest($apiKey, $projectId, $playlistId, $libraryId, $libraryItemId, $duration);
+
+        $response = $this->call($requestObject);
+
+        $responseObject = new \Qlite\Api\PlaylistItem\PostResponse($response);
+
+        if ($responseObject->getStatusCode() == \Illuminate\Http\Response::HTTP_OK) {
+            return $responseObject->getObject();
+        }
+
+        return false;
+    }
+
     public function getPlayers($apiKey, $projectId)
     {
         $requestObject = new \Qlite\Api\Player\ListRequest($apiKey, $projectId);
