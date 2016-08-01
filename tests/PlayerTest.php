@@ -53,4 +53,23 @@ class PlayerTest extends \PHPUnit_Framework_TestCase
     {
         // Don't have access rights to create player - must be handled by qlite
     }
+
+    public function test_update_player_returns_results()
+    {
+        $mock = new MockHandler([
+            new Response(200, [], file_get_contents('tests/json/player_update_success.json')),
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $api = new Qlite(['client' => $client]);
+
+        $response = $api->updatePlayer('apikey', 16, 124, [
+            'playlistid' => 103,
+        ]);
+
+        $this->assertEquals(124, $response->getId());
+        $this->assertEquals(103, $response->getPlaylistId());
+    }
 }

@@ -30,4 +30,13 @@ class PlaylistItem
     {
         return $this->json->visible;
     }
+
+    public function getLibraryItemId()
+    {
+        if (!isset($this->json->simpleimage->libraryitemid)) {
+            return '';
+        }
+
+        return $this->json->simpleimage->libraryitemid;
+    }
 }

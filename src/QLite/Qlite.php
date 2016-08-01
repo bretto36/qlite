@@ -217,6 +217,21 @@ class Qlite
         return false;
     }
 
+    public function updatePlayer($apiKey, $projectId, $playerId, $newDetails)
+    {
+        $requestObject = new \Qlite\Api\Player\PutRequest($apiKey, $projectId, $playerId, $newDetails);
+
+        $response = $this->call($requestObject);
+
+        $responseObject = new \Qlite\Api\Player\PutResponse($response);
+
+        if ($responseObject->getStatusCode() == \Illuminate\Http\Response::HTTP_OK) {
+            return $responseObject->getObject();
+        }
+
+        return false;
+    }
+
     public function getLibraries($apiKey, $projectId)
     {
         $requestObject = new \Qlite\Api\Library\ListRequest($apiKey, $projectId);

@@ -22,6 +22,7 @@ class ListRequest extends AbstractRequest
     {
         $this->apiKey             = $apiKey;
         $this->projectId          = $projectId;
+        $this->playlistId         = $playlistId;
         $this->includeSubProjects = $includeSubProjects;
         $this->sort               = $sort;
         $this->pagination         = $pagination;

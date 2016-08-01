@@ -1,0 +1,145 @@
+{
+  "format": 0,
+  "player": {
+    "id": "124",
+    "active": true,
+    "projectid": "16",
+    "qliteserial": "16-01234-01",
+    "name": "Tower Display 1",
+    "description": "Breda CS, resolutie 96 x 240",
+    "width": 240,
+    "height": 96,
+    "playertypeid": "2",
+    "_playertypename": "QlDvi v2.6",
+    "playlistid": "103",
+    "operatingon": "00:00:00",
+    "operatingoff": "23:59:00",
+    "gpsavailable": false,
+    "_location": {
+      "datetime": "2016-07-29T08:34:34Z",
+      "lat": 51.596405,
+      "lng": 4.7719531
+    },
+    "_temperature": null,
+    "_firstplaylistitem": {
+      "id": true,
+      "posid": false,
+      "visible": true,
+      "duration": "30",
+      "type": "simpleimage",
+      "simpleimage": {
+        "libraryid": "65",
+        "libraryitemid": "354",
+        "_filepath": "libraryitems/prj16/lib65/r83dde99f81b061e2307bb3db3c719f4.jpg",
+        "_previewfilepath": "libraryitems/prj16/lib65/r83dde99f81b061e2307bb3db3c719f4.png"
+      }
+    },
+    "_pings": null,
+    "_transports": [
+      {
+        "datetime": "2016-08-01T23:39:00Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-08-01T23:28:55Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-08-01T23:18:51Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-08-01T23:08:46Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-08-01T22:58:42Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-08-01T22:48:37Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-08-01T22:38:33Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-08-01T22:28:28Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-08-01T22:18:23Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      },
+      {
+        "datetime": "2016-08-01T22:08:19Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      }
+    ],
+    "_status": {
+      "iscontentinvalidated": true,
+      "istransportpending": false,
+      "istransporting": false,
+      "_lasttransport": {
+        "datetime": "2016-08-01T23:39:00Z",
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201,
+        "progresspermille": 0
+      }
+    },
+    "_scenarios": null,
+    "_warnings": [
+      {
+        "type": "transport",
+        "datetime": "2016-07-29T09:23:49Z",
+        "warning_status": true,
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201
+      }
+    ],
+    "_warnings_actual": [
+      {
+        "type": "transport",
+        "datetime": "2016-07-29T09:23:49Z",
+        "warning_status": true,
+        "progresstype": "warn",
+        "progressmessage": "NovaTP: Error opening connection",
+        "progresscode": 1201
+      }
+    ],
+    "_traffic": null
+  }
+}

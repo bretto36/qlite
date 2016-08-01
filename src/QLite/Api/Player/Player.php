@@ -25,4 +25,9 @@ class Player
     {
         return $this->json->name;
     }
+
+    public function getPlaylistId()
+    {
+        return $this->json->playlistid;
+    }
 }
