@@ -17,8 +17,8 @@ class PutRequest extends AbstractPutRequest
     public function __construct($apiKey, $projectId, $playerId, $values)
     {
         $this->apiKey    = $apiKey;
-        $this->playerId  = $projectId;
         $this->projectId = $projectId;
+        $this->playerId  = $playerId;
         $this->values    = $values;
 
         // Possible values
