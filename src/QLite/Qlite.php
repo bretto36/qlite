@@ -339,7 +339,7 @@ class Qlite
                 ]);
             }
         } else {
-            if ($requestObject->getMethod() == 'POST') {
+            if ($requestObject->getMethod() == 'POST' || $requestObject->getMethod() == 'PUT') {
                 $response = $client->request($requestObject->getMethod(), $requestObject->getUrl(), [
                     'json' => $requestObject->getBody(),
                 ]);
