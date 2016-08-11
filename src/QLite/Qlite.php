@@ -127,6 +127,21 @@ class Qlite
         return false;
     }
 
+    public function updatePlaylist($apiKey, $projectId, $playlistId, $values = [])
+    {
+        $requestObject = new \Qlite\Api\Playlist\PutRequest($apiKey, $projectId, $playlistId, $values);
+
+        $response = $this->call($requestObject);
+
+        $responseObject = new \Qlite\Api\Playlist\PutResponse($response);
+
+        if ($responseObject->getStatusCode() == \Illuminate\Http\Response::HTTP_OK) {
+            return $responseObject->getObject();
+        }
+
+        return false;
+    }
+
     public function getPlaylistItems($apiKey, $projectId, $playlistId)
     {
         $requestObject = new \Qlite\Api\PlaylistItem\ListRequest($apiKey, $projectId, $playlistId);

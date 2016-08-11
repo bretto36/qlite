@@ -60,7 +60,25 @@ class PlaylistTest extends \PHPUnit_Framework_TestCase
 
         $api = new Qlite(['client' => $client]);
 
-        $response = $api->createPlaylist('apikey', 99, 'Test Playlist Name');
+        $response = $api->createPlaylist('apikey', 10, 'Test Playlist Name');
+
+        $this->assertEquals(101, $response->getId());
+        $this->assertEquals(10, $response->getProjectId());
+        $this->assertEquals('Test Playlist Name', $response->getName());
+    }
+
+    public function test_update_playlist_returns_results()
+    {
+        $mock = new MockHandler([
+            new Response(200, [], file_get_contents('tests/json/playlist_update_success.json')),
+        ]);
+
+        $handler = HandlerStack::create($mock);
+        $client = new Client(['handler' => $handler]);
+
+        $api = new Qlite(['client' => $client]);
+
+        $response = $api->updatePlaylist('apikey', 10, 101, ['autopublish' => true]);
 
         $this->assertEquals(101, $response->getId());
         $this->assertEquals(10, $response->getProjectId());

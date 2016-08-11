@@ -25,4 +25,9 @@ class Playlist
     {
         return $this->json->name;
     }
+
+    public function isAutoPublish()
+    {
+        return $this->json->autopublish;
+    }
 }
