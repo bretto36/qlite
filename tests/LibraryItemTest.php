@@ -4,6 +4,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Middleware;
 
 use Qlite\Qlite;
 
@@ -15,12 +16,23 @@ class LibraryItemTest extends \PHPUnit_Framework_TestCase
             new Response(200, [], file_get_contents('tests/json/library_items_success.json')),
         ]);
 
+        $container = [];
+
+        $history = Middleware::history($container);
+
         $handler = HandlerStack::create($mock);
+
+        $handler->push($history);
+
         $client = new Client(['handler' => $handler]);
 
         $api = new Qlite(['client' => $client]);
 
         $response = $api->getLibraryItems('apikey', 10, 62);
+
+        foreach ($container as $transaction) {
+            $this->assertEquals('GET', $transaction['request']->getMethod());
+        }
 
         $this->assertEquals(3, count($response->getLibraryItems()));
 
@@ -49,12 +61,23 @@ class LibraryItemTest extends \PHPUnit_Framework_TestCase
             new Response(200, [], file_get_contents('tests/json/library_item_success.json')),
         ]);
 
+        $container = [];
+
+        $history = Middleware::history($container);
+
         $handler = HandlerStack::create($mock);
+
+        $handler->push($history);
+
         $client = new Client(['handler' => $handler]);
 
         $api = new Qlite(['client' => $client]);
 
         $response = $api->getLibraryItem('apikey', 10, 62, 101);
+
+        foreach ($container as $transaction) {
+            $this->assertEquals('GET', $transaction['request']->getMethod());
+        }
 
         $this->assertEquals(351, $response->getId());
         $this->assertEquals('Image 1', $response->getName());
@@ -66,12 +89,23 @@ class LibraryItemTest extends \PHPUnit_Framework_TestCase
             new Response(200, [], file_get_contents('tests/json/library_item_create_success.json')),
         ]);
 
+        $container = [];
+
+        $history = Middleware::history($container);
+
         $handler = HandlerStack::create($mock);
+
+        $handler->push($history);
+
         $client = new Client(['handler' => $handler]);
 
         $api = new Qlite(['client' => $client]);
 
         $response = $api->createLibraryItem('apikey', 10, 62, 'Test Item Name', 'tests/image/example.jpg', 'tag tag2');
+
+        foreach ($container as $transaction) {
+            $this->assertEquals('POST', $transaction['request']->getMethod());
+        }
 
         $this->assertEquals(352, $response->getId());
         $this->assertEquals('Test Item Name', $response->getName());

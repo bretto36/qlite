@@ -2,9 +2,9 @@
 
 namespace Qlite\Api\PlaylistItem;
 
-use Qlite\Api\AbstractRequest;
+use Qlite\Api\AbstractDeleteRequest;
 
-class DeleteRequest extends AbstractRequest
+class DeleteRequest extends AbstractDeleteRequest
 {
     protected $apiKey;
 

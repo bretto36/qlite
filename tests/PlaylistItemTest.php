@@ -4,6 +4,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Middleware;
 
 use Qlite\Qlite;
 
@@ -15,7 +16,14 @@ class PlaylistItemTest extends \PHPUnit_Framework_TestCase
             new Response(200, [], file_get_contents('tests/json/playlist_items_success.json')),
         ]);
 
+        $container = [];
+
+        $history = Middleware::history($container);
+
         $handler = HandlerStack::create($mock);
+
+        $handler->push($history);
+
         $client = new Client(['handler' => $handler]);
 
         $api = new Qlite(['client' => $client]);
@@ -27,6 +35,10 @@ class PlaylistItemTest extends \PHPUnit_Framework_TestCase
         $playlistItems = $response->getPlaylistItems();
 
         $playlistItem = array_shift($playlistItems);
+
+        foreach ($container as $transaction) {
+            $this->assertEquals('GET', $transaction['request']->getMethod());
+        }
 
         $this->assertEquals(704, $playlistItem->getId());
         $this->assertEquals(30, $playlistItem->getDuration());
@@ -40,12 +52,23 @@ class PlaylistItemTest extends \PHPUnit_Framework_TestCase
             new Response(200, [], file_get_contents('tests/json/playlist_item_success.json')),
         ]);
 
+        $container = [];
+
+        $history = Middleware::history($container);
+
         $handler = HandlerStack::create($mock);
+
+        $handler->push($history);
+
         $client = new Client(['handler' => $handler]);
 
         $api = new Qlite(['client' => $client]);
 
         $response = $api->getPlaylistItem('apikey', 16, 103, 704);
+
+        foreach ($container as $transaction) {
+            $this->assertEquals('GET', $transaction['request']->getMethod());
+        }
 
         $this->assertEquals(704, $response->getId());
         $this->assertEquals(30, $response->getDuration());
@@ -59,12 +82,23 @@ class PlaylistItemTest extends \PHPUnit_Framework_TestCase
             new Response(200, [], file_get_contents('tests/json/playlist_item_create_success.json')),
         ]);
 
+        $container = [];
+
+        $history = Middleware::history($container);
+
         $handler = HandlerStack::create($mock);
+
+        $handler->push($history);
+
         $client = new Client(['handler' => $handler]);
 
         $api = new Qlite(['client' => $client]);
 
         $response = $api->addLibraryItemToPlaylist('apikey', 16, 103, 65, 354, 30);
+
+        foreach ($container as $transaction) {
+            $this->assertEquals('POST', $transaction['request']->getMethod());
+        }
 
         $this->assertEquals(704, $response->getId());
         $this->assertEquals(30, $response->getDuration());
@@ -78,12 +112,23 @@ class PlaylistItemTest extends \PHPUnit_Framework_TestCase
             new Response(200, [], file_get_contents('tests/json/playlist_item_delete_success.json')),
         ]);
 
+        $container = [];
+
+        $history = Middleware::history($container);
+
         $handler = HandlerStack::create($mock);
+
+        $handler->push($history);
+
         $client = new Client(['handler' => $handler]);
 
         $api = new Qlite(['client' => $client]);
 
         $response = $api->deletePlaylistItem('apikey', 16, 103, 705);
+
+        foreach ($container as $transaction) {
+            $this->assertEquals('DELETE', $transaction['request']->getMethod());
+        }
 
         $this->assertEquals(705, $response->getId());
     }

@@ -4,6 +4,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Middleware;
 
 use Qlite\Qlite;
 
@@ -15,12 +16,23 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
             new Response(200, [], file_get_contents('tests/json/projects_success.json')),
         ]);
 
+        $container = [];
+
+        $history = Middleware::history($container);
+
         $handler = HandlerStack::create($mock);
+
+        $handler->push($history);
+
         $client = new Client(['handler' => $handler]);
 
         $api = new Qlite(['client' => $client]);
 
         $response = $api->getProjects('apikey');
+
+        foreach ($container as $transaction) {
+            $this->assertEquals('GET', $transaction['request']->getMethod());
+        }
 
         $this->assertEquals(1, count($response->getProjects()));
 
@@ -47,12 +59,23 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
             new Response(200, [], file_get_contents('tests/json/project_success.json')),
         ]);
 
+        $container = [];
+
+        $history = Middleware::history($container);
+
         $handler = HandlerStack::create($mock);
+
+        $handler->push($history);
+
         $client = new Client(['handler' => $handler]);
 
         $api = new Qlite(['client' => $client]);
 
         $response = $api->getProject('apikey', 9);
+
+        foreach ($container as $transaction) {
+            $this->assertEquals('GET', $transaction['request']->getMethod());
+        }
 
         $this->assertEquals(9, $response->getId());
         $this->assertEquals('Project Name', $response->getName());
@@ -67,12 +90,23 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
             new Response(200, [], file_get_contents('tests/json/project_success.json')),
         ]);
 
+        $container = [];
+
+        $history = Middleware::history($container);
+
         $handler = HandlerStack::create($mock);
+
+        $handler->push($history);
+
         $client = new Client(['handler' => $handler]);
 
         $api = new Qlite(['client' => $client]);
 
         $response = $api->getProject('apikey', 9);
+
+        foreach ($container as $transaction) {
+            $this->assertEquals('GET', $transaction['request']->getMethod());
+        }
 
         $this->assertEquals(9, $response->getId());
         $this->assertEquals('Project Name', $response->getName());
