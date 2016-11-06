@@ -1,22 +1,22 @@
 {
-	"name" : "bretto36/qlite",
-	"description" : "QLite Api Wrapper",
-	"type" : "library",
-	"license" : "MIT",
-	"require" : {
-		"php-http/guzzle6-adapter" : "~1.1",
-		"phpunit/phpunit" : "4.8.*",
-		"illuminate/http" : "^5.2"
-	},
-	"autoload" : {
-		"psr-4" : {
-			"Qlite\\" : "src/QLite"
-		}
-	},
-	"autoload-dev" : {
-		"psr-4" : {
-			"Qlite\\Tests\\" : "tests/"
-		}
-	},
-	"minimum-stability" : "stable"
+  "name" : "bretto36/qlite",
+  "description" : "QLite Api Wrapper",
+  "type" : "library",
+  "license" : "MIT",
+  "require" : {
+    "php-http/guzzle6-adapter" : "~1.1",
+    "phpunit/phpunit": "^5.6",
+    "illuminate/http" : "^5.2"
+  },
+  "autoload" : {
+    "psr-4" : {
+      "Qlite\\" : "src/QLite"
+    }
+  },
+  "autoload-dev" : {
+    "psr-4" : {
+      "Qlite\\Tests\\" : "tests/"
+    }
+  },
+  "minimum-stability" : "stable"
 }
